@@ -1,0 +1,336 @@
+#backButton:default {
+    -fx-background-image: url("../icons/back-track.png");
+    -fx-background-size: 32px 32px;
+    -fx-background-color: transparent;
+}
+#backButton:hover:pressed {
+    -fx-background-image: url("../icons/back-track-pressed.png");
+}
+#backButton:hover {
+    -fx-background-image: url("../icons/back-track-hover.png");
+}
+#backButton:default:hover {
+    -fx-background-image: url("../icons/back-track-hover.png");
+}
+
+#closeWindowButton {
+    -fx-background-image: url("../icons/close.png");
+    -fx-background-size: 24px 24px;
+    -fx-background-color: transparent;
+}
+#minimizeWindowButton {
+    -fx-background-image: url("../icons/minimize.png");
+    -fx-background-size: 24px 24px;
+    -fx-background-color: transparent;
+}
+
+#closeWindowButton:hover {
+    -fx-background-image: url("../icons/close-hover.png");
+}
+#minimizeWindowButton:hover {
+    -fx-background-image: url("../icons/minimize-hover.png");
+}
+
+#errorMessageBox {
+    -fx-background-color: #4ecdc4;
+    -fx-text-fill: #ac0606;
+    -fx-focus-traversable: false;
+    -fx-text-alignment: center;
+}
+
+#titleBar {
+    -fx-background-color: #323b45;
+}
+
+
+.canvas {
+    -fx-background-color: red;
+}
+
+.split-pane:horizontal > .split-pane-divider {
+    -fx-background-color: transparent;
+}
+
+.split-pane:vertical > .split-pane-divider {
+    -fx-background-color: transparent;
+}
+
+#userInfoBlock {
+    -fx-background-color: #4ecdc4;
+}
+#userInfoBlock.label {
+    -fx-text-fill: #292f36;
+    -fx-background-color: #4ecdc4;
+}
+
+#collectionActionsBlock {
+    -fx-background-color: #4ecdc4;
+}
+#collectionActionsBlock.label {
+    -fx-text-fill: #292f36;
+    -fx-background-color: #4ecdc4;
+}
+
+.root {
+    -fx-background-color: #292f36;
+}
+
+.background {
+    -fx-background-color: #292f36;
+}
+
+.label-bright {
+    -fx-font-size: 11pt;
+    -fx-font-family: "Segoe UI Semibold";
+    -fx-text-fill: #f7fff7;
+    -fx-opacity: 1;
+}
+
+.label-header {
+    -fx-font-size: 32pt;
+    -fx-font-family: "Segoe UI Light";
+    -fx-text-fill: #f7fff7;
+    -fx-opacity: 1;
+}
+
+.table-view {
+    -fx-base: #292f36;
+    -fx-control-inner-background: #292f36;
+    -fx-background-color: #292f36;
+    -fx-table-cell-border-color: transparent;
+    -fx-table-header-border-color: transparent;
+    -fx-padding: 0;
+    -fx-text-fill: #f7fff7;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: transparent;
+}
+
+.table-view .column-header, .table-view .filler {
+    -fx-size: 35px;
+    -fx-border-width: 0 0 1 0;
+    -fx-background-color: transparent;
+    -fx-border-color:
+            transparent
+            transparent
+            derive(-fx-base, 80%)
+            transparent;
+    -fx-border-insets: 0 10 1 0;
+}
+
+.table-view .column-header .label {
+    -fx-font-size: 10pt;
+    -fx-font-family: "Segoe UI Light";
+    -fx-text-fill: #f7fff7;
+    -fx-alignment: center-left;
+    -fx-opacity: 1;
+}
+
+.table-view .button {
+    -fx-max-height: 10px;
+}
+
+.table-view:focused .table-row-cell:filled:focused:selected {
+    -fx-background-color: #37404c;
+}
+
+.table-view .table-row-cell:visited {
+    -fx-background-color: #37404c;
+}
+
+.split-pane {
+    -fx-background-color: #2a4454;
+    -fx-padding: 1 0 0 0;
+}
+
+.menu-bar {
+    -fx-background-color: derive(#1d1d1d,20%);
+}
+
+.context-menu {
+    -fx-background-color: derive(#1d1d1d,50%);
+}
+
+.menu-bar .label {
+    -fx-font-size: 14pt;
+    -fx-font-family: "Segoe UI Light";
+    -fx-text-fill: #f7fff7;
+    -fx-opacity: 0.9;
+}
+
+.menu .left-container {
+    -fx-background-color: black;
+}
+
+.label {
+    -fx-padding: 0 0 5 0;
+    -fx-text-fill: #f7fff7;
+    -fx-font-size: 12pt;
+    -fx-font-family: "Segoe UI Semibold";
+}
+
+VBox .label {
+    -fx-padding: 0 0 5 0;
+    -fx-text-fill: #f7fff7;
+    -fx-font-size: 12pt;
+    -fx-font-family: "Segoe UI Semibold";
+}
+
+HBox .label {
+    -fx-padding: 0 0 5 0;
+    -fx-text-fill: #f7fff7;
+    -fx-font-size: 12pt;
+    -fx-font-family: "Segoe UI Semibold";
+}
+
+HBox .title {
+    -fx-padding: 0 0 5 0;
+    -fx-text-fill: #292f36;
+    -fx-font-size: 12pt;
+    -fx-font-family: "Segoe UI Semibold";
+}
+
+HBox {
+    -fx-alignment: center;
+}
+
+GridPane HBox {
+    -fx-alignment: center;
+}
+
+
+.choice-box {
+    -fx-background-color: #F7FFF7;
+    -fx-mark-color: #4ecdc4;
+    -fx-text-fill: #292f36;
+}
+
+.choice-box > .label {
+    -fx-label-padding: 0 0 0 10;
+    -fx-text-fill: #F7FFF7;
+}
+
+.choice-box .context-menu {
+    -fx-background-color: #292f36;
+}
+
+.choice-box .label {
+    -fx-text-fill: #292f36;
+}
+
+.choice-box .menu-item > .label {
+    -fx-label-padding: 0 0 0 10;
+    -fx-text-fill: #F7FFF7;
+}
+
+.choice-box .menu-item:focused > .label {
+    -fx-label-padding: 0 0 0 10;
+    -fx-text-fill: #F7FFF7;
+}
+
+.choice-box .menu-item:hover {
+    -fx-text-fill: #F7FFF7;
+    -fx-background-color: #37404c;
+}
+
+
+
+.text-field {
+    -fx-background-color: #F7FFF7;
+    -fx-font-size: 12pt;
+    -fx-font-family: "Segoe UI Semibold";
+}
+
+.button {
+    -fx-padding: 5 22 5 22;
+    -fx-border-width: 0;
+    -fx-background-radius: 0;
+    -fx-background-color: #34a2cb;
+    -fx-font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+    -fx-font-size: 10pt;
+    -fx-text-fill: #292f36;
+    -fx-background-insets: 0 0 0 0, 0, 1, 2;
+}
+
+.toggle-button {
+    -fx-background-color: #868686;
+}
+.toggle-button:selected {
+    -fx-background-color: #7db172;
+}
+.toggle-button:selected:focused {
+    -fx-background-color: #7db172;
+}
+
+.button:pressed, .button:default:hover:pressed {
+    -fx-background-color: #34a2cb;
+    -fx-text-fill: #292f36;
+}
+
+.button:focused {
+    -fx-border-width: 0, 0;
+    -fx-border-radius: 0, 0;
+    -fx-border-insets: 1 1 1 1, 0;
+}
+
+.button:disabled, .button:default:disabled {
+    -fx-opacity: 0.4;
+    -fx-background-color: #1d1d1d;
+    -fx-text-fill: grey;
+}
+
+.button:default {
+    -fx-background-color: -fx-focus-color;
+    -fx-text-fill: #292f36;
+}
+
+.button:default:hover {
+    -fx-background-color: derive(-fx-focus-color,30%);
+}
+
+
+
+.confirmActionButton:hover:pressed {
+    -fx-background-color: #7db172;
+}
+.confirmActionButton {
+    -fx-background-color: #7db172;
+}
+.confirmActionButton:hover {
+    -fx-background-color: #9dd792;
+}
+
+.cancelActionButton {
+    -fx-background-color: #d05b5b;
+}
+.cancelActionButton:hover:pressed {
+    -fx-background-color: #d05b5b;
+}
+.cancelActionButton:hover {
+    -fx-background-color: #f76c6c;
+}
+
+#deleteSelectedGroupButton, #deleteSelectedGroupButton:hover:pressed {
+    -fx-background-color: #cfa049;
+}
+#deleteSelectedGroupButton:hover {
+    -fx-background-color: #ffc75f;
+}
+
+#deleteAllGroupsButton, #deleteAllGroupsButton:hover:pressed {
+    -fx-background-color: #d05b5b;
+}
+#deleteAllGroupsButton:hover {
+    -fx-background-color: #f76c6c;
+}
+
+.warnButton {
+    -fx-background-color: #fed766;
+}
+.warnButton:hover {
+    -fx-background-color: #ffe900;
+}
+.warnButton:hover:pressed {
+    -fx-background-color: #fed766;
+}

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="me.veritaris.datatagger.Controllers.ImageTaggingController">
+   <children>
+      <AnchorPane fx:id="textTaggingPane" prefHeight="400.0" prefWidth="600.0" styleClass="background" stylesheets="@../styles/style.css">
+         <children>
+            <ImageView fx:id="captchaImage" fitHeight="220.0" fitWidth="350.0" layoutX="100.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true" />
+            <Button fx:id="goToNextImageButton" layoutX="460.0" layoutY="210.0" mnemonicParsing="false" onAction="#goToNextImage" prefHeight="26.0" prefWidth="110.0" styleClass="confirmActionButton" stylesheets="@../styles/style.css" text="Next" />
+            <ProgressBar fx:id="datasetTaggingProgress" layoutX="16.0" layoutY="366.0" prefHeight="20.0" prefWidth="569.0" progress="0.0" />
+            <TextField fx:id="captchaTextField" layoutX="460.0" layoutY="165.0" onAction="#checkForRepetition" prefHeight="31.0" prefWidth="110.0" />
+            <Label layoutX="460.0" layoutY="132.0" prefHeight="25.0" prefWidth="107.0" text="Enter text:" />
+            <Button fx:id="finishTaggingButton" layoutX="456.0" layoutY="24.0" mnemonicParsing="false" onAction="#finishTagging" prefHeight="26.0" prefWidth="125.0" styleClass="cancelActionButton" text="Finish tagging" />
+            <Button fx:id="repeatedImageButton" disable="true" layoutX="460.0" layoutY="250.0" mnemonicParsing="false" onAction="#markAsRepeated" prefHeight="26.0" prefWidth="110.0" styleClass="warnButton" text="Repetition" />
+            <Label layoutX="100.0" layoutY="45.0" text="File: " />
+            <Label fx:id="currentFilePath" layoutX="138.0" layoutY="46.0" prefHeight="25.0" prefWidth="300.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
