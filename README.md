@@ -1,8 +1,8 @@
 # Data tagger
 ## What is it? 
-This is a dataset tagging tool 
-Now supports the following tagging types:
+This is a dataset markup & tagging tool 
+Now supports the following markup types:
 
-- [ ] Text captcha, image classification tagging 
+- [x] Text captcha, image classification markup
 - [ ] Shapes on image (circle, rectangle, etc.) 
-- [ ] Points on image tagging 
+- [ ] Points on image  
