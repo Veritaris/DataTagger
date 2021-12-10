@@ -334,3 +334,8 @@ GridPane HBox {
 .warnButton:hover:pressed {
     -fx-background-color: #fed766;
 }
+
+.progress-bar > .bar {
+    -fx-accent: #7db172;
+    -fx-background-insets: 0, 1, 2;
+}

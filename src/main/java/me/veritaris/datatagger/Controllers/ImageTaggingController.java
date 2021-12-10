@@ -3,9 +3,9 @@ package me.veritaris.datatagger.Controllers;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.ProgressBar;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -41,6 +41,7 @@ public class ImageTaggingController extends Controller implements Initializable 
     public void initialize(URL location, ResourceBundle resources) {
         int lastTaggedImage = Model.getMetadata().getLastTaggedImage();
         datasetTaggingProgress.setProgress(Model.getMetadata().getLastTaggedImage() / (double)Model.getMetadata().getImagesAmount());
+        datasetTaggingProgress.setTooltip(new Tooltip(String.format("%s/%s", Model.getMetadata().getLastTaggedImage(), Model.getMetadata().getImagesAmount())));
 
         if (Model.getMetadata().getTaggedImages().containsKey(lastTaggedImage)) {
             captchaTextField.setText(Model.getMetadata().getTaggedImages().get(lastTaggedImage));
@@ -50,6 +51,7 @@ public class ImageTaggingController extends Controller implements Initializable 
             (event) -> {
                 if (openMetadataFileCombination.match(event)) {
                     openMetadataFile();
+                    return;
                 }
                 switch (event.getCode()) {
                     case LEFT:
@@ -69,10 +71,17 @@ public class ImageTaggingController extends Controller implements Initializable 
                     case ESCAPE:
                         textTaggingPane.requestFocus();
                         break;
+                    case ENTER:
+                        handleTagAndGoToNextImage();
+                        break;
+                    case TAB:
+                        switchFocus();
+                        break;
                 }
                 event.consume();
             }
         );
+
         captchaTextField.setOnKeyPressed(
             (event) -> {
                 switch (event.getCode()) {
@@ -101,6 +110,8 @@ public class ImageTaggingController extends Controller implements Initializable 
             textTaggingPane.requestFocus();
         } else {
             captchaTextField.requestFocus();
+            captchaTextField.deselect();
+            captchaTextField.positionCaret(captchaTextField.getText().length());
         }
     }
 
@@ -141,6 +152,7 @@ public class ImageTaggingController extends Controller implements Initializable 
             captchaTextField.clear();
             openImage();
             datasetTaggingProgress.setProgress(Model.getMetadata().getLastTaggedImage() / (double)Model.getMetadata().getImagesAmount());
+            datasetTaggingProgress.setTooltip(new Tooltip(String.format("%s/%s", Model.getMetadata().getLastTaggedImage(), Model.getMetadata().getImagesAmount())));
             captchaTextField.requestFocus();
         }
     }
