@@ -104,7 +104,7 @@ public class StartupController implements Initializable {
         if (file.isDirectory()) {
             return (int) Arrays.stream(Objects.requireNonNull(file.listFiles()))
                 .filter(
-                    (inner_file) -> inner_file.isDirectory() && dirNamePattern.matcher(inner_file.getName()).matches()
+                    (innerFile) -> innerFile.isDirectory() && dirNamePattern.matcher(innerFile.getName()).matches()
                 )
                 .count();
         }
