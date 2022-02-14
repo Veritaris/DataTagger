@@ -14,6 +14,7 @@ public class Model {
     private static Metadata metadata;
     private static File file;
     private static Path datasetPath;
+    private static GitHandler gitHandler;
 
     private Model() {
 
@@ -30,12 +31,19 @@ public class Model {
             try {
                 new File(file.getAbsolutePath(), "metadata.yml").createNewFile();
                 metadata = MetadataHandler.getInstance(new File(file.toPath().toAbsolutePath() + "/metadata.yml")).getMetadata();
-                return false;
-            } catch (IOException e) {
-                e.printStackTrace();
+                if (metadata.isGitSavingEnabled()) {
+                    initGit();
+                }
+                return true;
+            } catch (IOException ioException) {
+                ioException.printStackTrace();
                 return false;
             }
         }
+    }
+
+    public static GitHandler getGitHandler() {
+        return gitHandler;
     }
 
     public static Metadata getMetadata() {
@@ -61,8 +69,8 @@ public class Model {
             metadata.setTaggedImages(newTagged);
             metadata.setLastTaggedImage(metadata.getLastTaggedImage() + 1);
             Model.getInstance().saveProgress();
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (IOException exception) {
+            exception.printStackTrace();
         }
     }
 
@@ -78,17 +86,21 @@ public class Model {
         try {
             MetadataHandler.getInstance(Model.file).dumpMetadata(metadata, file.toPath());
             makeBackup();
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (IOException exception) {
+            exception.printStackTrace();
         }
     }
 
     private void makeBackup() {
         try {
             MetadataHandler.getInstance(Model.file).dumpMetadata(metadata, Paths.get(file.getParent() + "/.metadata.yml"));
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (IOException exception) {
+            exception.printStackTrace();
         }
+    }
+
+    private void initGit() {
+        gitHandler = new GitHandler(new File(Model.datasetPath.toFile() + "/.git"));
     }
 
     public void loadProgress() {

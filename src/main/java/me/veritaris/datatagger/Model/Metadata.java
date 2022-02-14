@@ -1,6 +1,5 @@
 package me.veritaris.datatagger.Model;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -10,10 +9,20 @@ public class Metadata {
     private String datasetName;
     private int imagesAmount;
     private int lastTaggedImage;
+    private boolean gitSavingEnabled;
     private Map<Integer, String> taggedImages = new HashMap<>();
-    private List<Integer> repeatedImages = new ArrayList<>();
+    private Map<String, List<Integer>> repeatedImages = new HashMap<String, List<Integer>>();
 
-    public Metadata() {}
+    public Metadata() {
+    }
+
+    public boolean isGitSavingEnabled() {
+        return gitSavingEnabled;
+    }
+
+    public void setGitSavingEnabled(boolean gitSavingEnabled) {
+        this.gitSavingEnabled = gitSavingEnabled;
+    }
 
     public int getLastTaggedImage() {
         return lastTaggedImage;
@@ -31,11 +40,11 @@ public class Metadata {
         this.taggedImages = taggedImages;
     }
 
-    public List<Integer> getRepeatedImages() {
+    public Map<String, List<Integer>> getRepeatedImages() {
         return repeatedImages;
     }
 
-    public void setRepeatedImages(List<Integer> repeatedImages) {
+    public void setRepeatedImages(Map<String, List<Integer>> repeatedImages) {
         this.repeatedImages = repeatedImages;
     }
 

@@ -43,7 +43,7 @@ public class MetadataHandler {
 
     private void writeDefaultMetadata(Path path) {
         try {
-            Files.write(path, Arrays.asList("!!me.veritaris.datatagger.Model.Metadata", "datasetName: "+path.getParent(), "imagesAmount: 0", "lastTaggedImage: 0", "taggedImages: {}", "repeatedImages: []"));
+            Files.write(path, Arrays.asList("!!me.veritaris.datatagger.Model.Metadata", "datasetName: "+path.getParent(), "gitSavingEnabled: false", "imagesAmount: 0", "lastTaggedImage: 0", "taggedImages: {}", "repeatedImages: {}"));
         } catch (IOException e) {
             e.printStackTrace();
         }
