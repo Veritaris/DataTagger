@@ -8,7 +8,7 @@ import javafx.stage.Stage;
 import me.veritaris.datatagger.Controllers.StartupController;
 
 public class Main extends Application {
-
+    private static Stage primaryStage;
 
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -16,6 +16,8 @@ public class Main extends Application {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/mainView.fxml"));
         Parent root = loader.load();
         StartupController.setStage(primaryStage);
+
+        Main.primaryStage = primaryStage;
 
         primaryStage.setTitle("Dataset tagging tool");
         primaryStage.setScene(new Scene(root));
@@ -31,4 +33,9 @@ public class Main extends Application {
     public static void main(String[] args) {
         launch(args);
     }
+
+    public static Stage getPrimaryStage() {
+        return primaryStage;
+    }
 }
+
