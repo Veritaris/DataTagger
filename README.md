@@ -17,7 +17,7 @@ Shortcuts:
 ### Extended guide:  
 You need to select a folder with a dataset that contains numerically named directories with `image.png` file inside (temporary format, I'll add support of different formats later)
 
-<img width="712" alt="Dataset structure" src="https://user-images.githubusercontent.com/37160602/145069814-56485619-53f0-406d-b987-ac6674b59335.png">
+<img width="1212" alt="Screenshot 2021-12-11 at 00 29 42" src="https://user-images.githubusercontent.com/37160602/145643705-ed8a966c-30fc-4c1d-95f0-d61fd4c1e428.png">
 
 After that program will count folders amount and show this. It will also create `metadata.yml` file in the dataset directory (also there will be `.metadata.yml` file when you start marking up your dataset - this is a "backup"). If the directory already contains a metadata file, DataTagger will read all necessary information. You can also see markup progress here. Finally, click "Go to tagging"  
 
