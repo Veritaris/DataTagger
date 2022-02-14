@@ -289,7 +289,12 @@ GridPane HBox {
     -fx-background-color: derive(-fx-focus-color,30%);
 }
 
-
+.toggle-switch .thumb {
+    -fx-border-radius: 0;
+}
+.toggle-switch:selected .thumb-area {
+    -fx-background-color: #7db172;
+}
 
 .confirmActionButton:hover:pressed {
     -fx-background-color: #7db172;
@@ -338,4 +343,71 @@ GridPane HBox {
 .progress-bar > .bar {
     -fx-accent: #7db172;
     -fx-background-insets: 0, 1, 2;
+}
+
+.list-view {
+    -fx-base: #292f36;
+    -fx-control-inner-background: #292f36;
+    -fx-background-color: #292f36;
+    -fx-list-cell-border-color: transparent;
+    -fx-list-header-border-color: transparent;
+    -fx-padding: 0;
+    -fx-text-fill: #f7fff7;
+}
+
+.list-view .scroll-bar:vertical .thumb {
+    -fx-background-insets: 0 2 0 0;
+    -fx-background-color: #34a2cb;
+    -fx-min-width: 12;
+    -fx-pref-height: 12;
+}
+
+.list-view .column-header-background {
+    -fx-background-color: transparent;
+}
+
+.list-view .scroll-bar:vertical .increment-button,
+.list-view .scroll-bar:vertical .increment-arrow,
+.list-view .scroll-bar:vertical .decrement-button,
+.list-view .scroll-bar:vertical .decrement-arrow {
+    -fx-padding:0;
+}
+
+.list-view .scroll-bar:horizontal .increment-arrow,
+.list-view .scroll-bar:horizontal .decrement-arrow,
+.list-view .scroll-bar:horizontal .increment-button,
+.list-view .scroll-bar:horizontal .decrement-button {
+    -fx-padding:0;
+}
+
+.list-view .column-header, .list-view .filler {
+    -fx-size: 35px;
+    -fx-border-width: 0 0 1 0;
+    -fx-background-color: transparent;
+    -fx-border-color:
+            transparent
+            transparent
+            derive(-fx-base, 80%)
+            transparent;
+    -fx-border-insets: 0 10 1 0;
+}
+
+.list-view .column-header .label {
+    -fx-font-size: 10pt;
+    -fx-font-family: "Segoe UI Light";
+    -fx-text-fill: #f7fff7;
+    -fx-alignment: center-left;
+    -fx-opacity: 1;
+}
+
+.list-view .button {
+    -fx-max-height: 10px;
+}
+
+.list-view:focused .list-row-cell:filled:focused:selected {
+    -fx-background-color: #37404c;
+}
+
+.list-view .list-row-cell:visited {
+    -fx-background-color: #37404c;
 }
