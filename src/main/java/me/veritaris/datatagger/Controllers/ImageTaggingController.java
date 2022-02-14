@@ -13,6 +13,9 @@ import javafx.scene.input.*;
 import javafx.scene.layout.AnchorPane;
 import me.veritaris.datatagger.Main;
 import me.veritaris.datatagger.Model.Model;
+import me.veritaris.datatagger.pojo.Annotation;
+import me.veritaris.datatagger.pojo.ImageTextAnnotation;
+import org.controlsfx.control.ToggleSwitch;
 
 import java.awt.*;
 import java.io.File;
@@ -35,6 +38,7 @@ public class ImageTaggingController extends Controller implements Initializable 
     @FXML protected AnchorPane textTaggingPane;
     @FXML protected Label currentFilePath;
     @FXML protected ListView<Annotation> imagesList;
+    @FXML protected ToggleSwitch alwaysOnTopSwitch;
 
     private final KeyCodeCombination openMetadataFileCombination = new KeyCodeCombination(KeyCode.O, KeyCombination.ALT_DOWN);
 
@@ -138,26 +142,18 @@ public class ImageTaggingController extends Controller implements Initializable 
             }
         );
 
-        captchaTextField.setOnKeyPressed(
+        alwaysOnTopSwitch.setOnMouseClicked(
             (event) -> {
-                switch (event.getCode()) {
-                    case ENTER:
-                        handleTagAndGoToNextImage();
-                        break;
-                    case TAB:
-                        switchFocus();
-                        break;
-                }
+                Main.getPrimaryStage().setAlwaysOnTop(alwaysOnTopSwitch.isSelected());
             }
         );
-        openImage();
     }
 
     private void openMetadataFile() {
         try {
             Desktop.getDesktop().edit(Model.getMetadataFile());
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (IOException exception) {
+            exception.printStackTrace();
         }
     }
 
